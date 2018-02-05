@@ -16,7 +16,7 @@ public class FileMoveWithCamel {
         });
         context.start();
 
-            Thread.sleep(5000);
+            Thread.sleep(4000);
 
         context.stop();
 
