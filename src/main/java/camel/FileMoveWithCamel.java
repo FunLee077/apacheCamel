@@ -1,3 +1,5 @@
+package camel;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -11,7 +13,8 @@ public class FileMoveWithCamel {
         context.addRoutes(new RouteBuilder() {
             @Override
             public void configure() throws Exception {
-                from("file:F:/history").to("file:F:/home");
+                FileConvertProcessor processor = new FileConvertProcessor();
+                from("file:F:/history/").process(processor).to("file:F:/home");
             }
         });
         context.start();
